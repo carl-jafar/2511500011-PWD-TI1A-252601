@@ -1,5 +1,5 @@
 # pertemuan-02
-nim : 2511500011<br>
+nim : 2511500011<br
 Nama : Muhammad Haikal
 
 hari ini rabu 01-10-2025  saya mempelajari: 
