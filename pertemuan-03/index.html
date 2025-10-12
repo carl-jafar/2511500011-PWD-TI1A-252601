@@ -6,6 +6,61 @@
     <title>PWD</title>
     <style>
 
+    header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    }
+
+    header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    }
+
+    nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+    padding: 0;
+    } 
+
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    }
+
+    #home {
+    background: linear-gradient(135deg, #ffffff, #e6f0ff);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+    position: relative;
+    overflow: hidden;
+    }
+
+    #home p {
+          align-items: baseline;
+          display: flex;
+          justify-content: flex-start;
+          margin: 0px;
+          padding: 6px 0;
+          border-bottom: 1px solid #e6e6e6;
+    }
+
+    #home h2 {
+            color: #003366;
+            text-align: center;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 6px;
+            margin-top: 0;
+            margin-bottom: 16px;
+    }
+
     #about {
     background: linear-gradient(135deg, #ffffff, #e6f0ff);
     border-radius: 16px;
@@ -18,16 +73,17 @@
     }
 
     #about p {
-      align-items: baseline;
-      display: flex;
-      justify-content: flex-start;
-      margin: 0px;
-      padding: 6px 0;
-      border-bottom: 1px solid #e6e6e6;
+          align-items: baseline;
+          display: flex;
+          justify-content: flex-start;
+          margin: 0px;
+          padding: 6px 0;
+          border-bottom: 1px solid #e6e6e6;
     }
 
     #about h2 {
             color: #003366;
+            text-align: center;
             border-bottom: 2px solid #003366;
             padding-bottom: 6px;
             margin-top: 0;
@@ -36,19 +92,6 @@
 
     #about strong {
         color: #0055aa;
-    }
-
-    @media (max-width: 600px) { 
-      #about p { 
-        flex-direction: column;
-        align-items: flex-start;
-       }
-
-      #about strong {
-        text-align: left;
-        padding-right:0 ;
-        margin-bottom: 2px;
-       }
     }
 
     #kontak {
@@ -94,6 +137,27 @@
     font-size: 1em;
   }
 
+  footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+  @media (max-width: 600px) { 
+      #about p { 
+        flex-direction: column;
+        align-items: flex-start;
+       }
+
+      #about strong {
+        text-align: left;
+        padding-right:0 ;
+        margin-bottom: 2px;
+       }
+    }
+
     </style>
 </head>
 <body>
@@ -126,14 +190,14 @@
                 <label for="txtnama">Nama :</label>
                 <input type="text" name="txtnama" placeholder="masukan nama anda" required autocomplete="name">
                 
-                <label for="txtemail">email :</label>
+                <label for="txtemail">Email :</label>
                 <input type="text" id="txtemail" name="txtemail" placeholder="masukkan email anda" required autocomplete="email"><label for=""></label>
                 
-                <label for="txtpesan">pesan :</label>
+                <label for="txtpesan">Pesan :</label>
                 <textarea name="txtpesan" id="txtpesan" rows="4" placeholder="hubungi saya di email" required></textarea>
 
-                <button type="submit">kirim</button>
-                <button type="reset">batal</button>
+                <button type="submit">Kirim</button>
+                <button type="reset">Batal</button>
             </form>
         </section>
     </main>
