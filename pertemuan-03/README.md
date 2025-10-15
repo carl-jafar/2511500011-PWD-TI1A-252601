@@ -10,4 +10,6 @@ Hari ini, Rabu 08  Oktober 2025, saya belajar:
     <li>membuat styling untuk selector ID #about</li>
     <li>membuat styling untuk selector ID #about elemen 2</li>
     <li>membuat styling untuk selector ID #about mode responsif mobile</li>
+    <li>membuat styling untuk selector ID #header</li>
+    <li>membuat styling untuk selector ID #footer</li>
 </ol>
