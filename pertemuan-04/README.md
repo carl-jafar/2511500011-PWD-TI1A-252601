@@ -13,4 +13,5 @@ Hari ini, 16  Oktober 2025, saya belajar:
 <li>styling navigasi</li>
 <li>styling header mobile</li>
 <li>styling ulang bagian section</li>
+<li>memperbaiki responsif mobile agar lebih rapi</li>
 </ol>

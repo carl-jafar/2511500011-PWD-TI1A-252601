@@ -5,7 +5,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f3f6fb, #b0d0ff);;
+    background: linear-gradient(135deg, #f3f6fb, #b0d0ff);
+    ;
     color: #333;
     line-height: 1.5;
 }
@@ -80,26 +81,26 @@ header li a:active {
 }
 
 #about p {
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  margin: 6px 0;
-  padding: 6px 0;
-  border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin: 6px 0;
+    padding: 6px 0;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 #about strong {
-  display: inline-block;
-  width: 180px;
-  color: #0055aa;
-  font-weight: 600;
+    display: inline-block;
+    width: 180px;
+    color: #0055aa;
+    font-weight: 600;
 }
 
 #about strong {
-  display: inline-block;
-  width: 180px;
-  color: #0055aa;
-  font-weight: 600;
+    display: inline-block;
+    width: 180px;
+    color: #0055aa;
+    font-weight: 600;
 }
 
 #kontak form {
@@ -144,22 +145,22 @@ header li a:active {
 }
 
 #kontak button[type="submit"] {
-  background-color: #0055aa;
-  color: white;
+    background-color: #0055aa;
+    color: white;
 }
 
 #kontak button[type="submit"]:hover {
-  background-color: #004080;
-  box-shadow: 0 4px 10px rgba(0, 51, 102, 0.3);
+    background-color: #004080;
+    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.3);
 }
 
 #kontak button[type="reset"] {
-  background-color: #e6e6e6;
-  color: #003366;
+    background-color: #e6e6e6;
+    color: #003366;
 }
 
 #kontak button[type="reset"]:hover {
-  background-color: #cccccc;
+    background-color: #cccccc;
 }
 
 #kontak p:last-child {
@@ -171,12 +172,12 @@ header li a:active {
 }
 
 footer {
-  background-color: #003366;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 20px;
-  box-shadow: 0 -3px 10px rgba(0, 51, 102, 0.3);
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 -3px 10px rgba(0, 51, 102, 0.3);
 }
 
 @media (max-width: 600px) {
@@ -185,11 +186,12 @@ footer {
         position: sticky;
         top: 0;
         z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0, 2px, 6px rgba(0,0,0,0.15));
     }
 
     header h1 {
         margin: 0 0 8px;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2;
     }
 
@@ -202,10 +204,17 @@ footer {
 
     header li a {
         display: block;
-        padding: 12px 14px;
+        font-size: 14px;
+        padding: 8px 10px;
         border: 1px solid rgba(255, 255, 255, .35);
         background: rgba(255, 255, 255, .08);
         backdrop-filter: saturate(120%);
+    }
+
+    #home,
+    #about,
+    #kontak {
+        margin: 20px 15px;
     }
 
     #about p {
@@ -217,5 +226,26 @@ footer {
         text-align: left;
         padding-right: 0;
         margin-bottom: 2px;
+    }
+
+    #kontak {
+        margin: 20px 15px;
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    #kontak input,
+    #kontak textarea {
+        width: 100%;
+        font-size: 0.95em;
+    }
+
+    #kontak h2 {
+        font-size: 22px;
+    }
+
+    #kontak button {
+        width: 100%;
+        max-width: 320px;
     }
 }
