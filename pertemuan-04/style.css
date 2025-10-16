@@ -145,10 +145,10 @@ header li a {
     padding-top: 10px;
 }
 
-footer p {
+footer {
+    padding: 10px;
     text-align: center;
     background-color: #003366;
-    margin-bottom: 10px;
     font-size: 28px;
 }
 

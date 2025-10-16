@@ -9,5 +9,10 @@ Hari ini, 16  Oktober 2025, saya belajar:
 <li> “aturan css untuk body dan global reset”.</li>
 <li>styling header</li>
 <li>styling #section home</li>
+<li>styling footer</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 <li></li>
 </ol>
