@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -8,25 +9,26 @@
         color: #333;
         line-height: 1.5;
     }
-    header h1 {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 28px;
+    header {
+        background: #003366;
+        color: #e6e6e6;
+        padding: 20px;
+        text-align: center;
+    }    
+
+    header ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
     }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 25px;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    header li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 12px;
+    }        
 
     #home {
       background: linear-gradient(135deg, #ffffff, #e6f0ff);
