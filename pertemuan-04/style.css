@@ -37,11 +37,11 @@ header li a:hover {
     transition: background-color 0.3s ease;
 }
 
-header li a:focus { 
-outline: 2px solid #ffffff; 
-outline-offset: 2px; 
-border-radius: 6px; 
-background-color: rgba(116, 241, 255, 0.721); 
+header li a:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    border-radius: 6px;
+    background-color: rgba(116, 241, 255, 0.721);
 }
 
 header li a:active {
@@ -171,6 +171,13 @@ footer {
 }
 
 @media (max-width: 600px) {
+    header {
+        padding: 16px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
     #about p {
         flex-direction: column;
         align-items: flex-start;
