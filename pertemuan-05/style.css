@@ -190,6 +190,14 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 16px;
+        top: 8px;
+    }
+    
     header {
         padding: 16px;
         position: sticky;
