@@ -10,7 +10,7 @@ Hari ini, 22  Oktober 2025, saya belajar:
 <li>tombol hamburger</li>
 <li>styling untuk class menu-toggle</li>
 <li>styling menu-toggle mobile</li>
-<li></li>
+<li>menghubungkan htmk,js, dan css</li>
 <li></li>
 <li></li>
 </ol>
