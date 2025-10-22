@@ -180,6 +180,15 @@ footer {
     box-shadow: 0 -3px 10px rgba(0, 51, 102, 0.3);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     header {
         padding: 16px;
