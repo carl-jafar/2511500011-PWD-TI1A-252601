@@ -11,6 +11,10 @@ Hari ini, 22  Oktober 2025, saya belajar:
 <li>styling untuk class menu-toggle</li>
 <li>styling menu-toggle mobile</li>
 <li>menghubungkan htmk,js, dan css</li>
+<li>membuat menu-toggle agar bisa gerakkan</li>
+<li>memasukan elemen form</li>
+<li></li>
+<li></li>
 <li></li>
 <li></li>
 </ol>
