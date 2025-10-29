@@ -16,5 +16,5 @@ Hari ini, 22  Oktober 2025, saya belajar:
 <li>memasukan elemen errormsg</li>
 <li>memasukan format valid</li>
 <li>memasukkan agar pesan lebih dari 10 karakter</li>
-<li></li>
+<li>mengisi yang ada di punya bapak</li>
 </ol>
