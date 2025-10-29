@@ -23,6 +23,9 @@
   <main>
     <section id="home">
       <h2>Selamat Datang</h2>
+        <?php
+           $nim = "2511500011"
+        ?>
       <p>Ini contoh paragraf HTML5.</p>
     </section>
 
