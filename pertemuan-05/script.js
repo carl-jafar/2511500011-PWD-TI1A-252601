@@ -30,3 +30,8 @@
       showError(email, "Format email tidak valid. Contoh: nama@mail.com"); 
       isValid = false; 
     } 
+
+     if (pesan.value.trim().length < 10) { 
+      showError(pesan, "Pesan minimal 10 karakter agar lebih jelas."); 
+      isValid = false; 
+    }
