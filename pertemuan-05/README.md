@@ -14,7 +14,7 @@ Hari ini, 22  Oktober 2025, saya belajar:
 <li>membuat menu-toggle agar bisa gerakkan</li>
 <li>memasukan elemen form</li>
 <li>memasukan elemen errormsg</li>
-<li></li>
+<li>memasukan format valid</li>
 <li></li>
 <li></li>
 </ol>

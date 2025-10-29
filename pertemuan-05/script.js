@@ -21,3 +21,12 @@
       showError(nama, "Nama hanya boleh berisi huruf dan spasi."); 
       isValid = false; 
     } 
+
+     if (email.value.trim() === "") { 
+      showError(email, "Email wajib diisi."); 
+      isValid = false; 
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { 
+
+      showError(email, "Format email tidak valid. Contoh: nama@mail.com"); 
+      isValid = false; 
+    } 
