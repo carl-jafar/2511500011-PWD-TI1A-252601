@@ -13,7 +13,7 @@ Hari ini, 22  Oktober 2025, saya belajar:
 <li>menghubungkan htmk,js, dan css</li>
 <li>membuat menu-toggle agar bisa gerakkan</li>
 <li>memasukan elemen form</li>
-<li></li>
+<li>memasukan elemen errormsg</li>
 <li></li>
 <li></li>
 <li></li>
