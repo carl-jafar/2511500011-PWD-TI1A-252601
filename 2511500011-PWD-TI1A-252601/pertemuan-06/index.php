@@ -68,7 +68,7 @@
   <h2>Nilai Saya</h2>
 
   <?php
-  // Data mata kuliah
+
   $matkul = [
     ["nama" => "Algoritma dan Struktur Data", "sks" => 4, "hadir" => 90, "tugas" => 60, "uts" => 80, "uas" => 70],
     ["nama" => "Agama", "sks" => 2, "hadir" => 70, "tugas" => 50, "uts" => 60, "uas" => 80],
@@ -77,7 +77,6 @@
     ["nama" => "Pemrograman Web Dasar", "sks" => 3, "hadir" => 69, "tugas" => 80, "uts" => 90, "uas" => 100],
   ];
 
-  // Fungsi untuk menghitung grade dan mutu
   function hitungGrade($nilaiAkhir, $nilaiHadir) {
     if ($nilaiHadir < 70) return ['E', 0.00];
     elseif ($nilaiAkhir >= 91) return ['A', 4.00];
