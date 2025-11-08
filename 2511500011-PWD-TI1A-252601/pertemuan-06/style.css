@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  transition: all 0.2s ease-in-out; /* efek halus global */
+  transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -197,6 +197,43 @@ footer {
   cursor: pointer;
 }
 
+.nilai-card {
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 20px 25px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 6px 15px rgba(0, 51, 102, 0.12);
+}
+
+.nilai-card h3 {
+  color: #003366;
+  margin-top: 0;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.nilai-card p {
+  margin: 5px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nilai-card strong {
+  color: #0055aa;
+  display: inline-block;
+  width: 160px;
+}
+
+.nilai-card.ipk {
+  text-align: center;
+  background-color: #f3f6fb;
+  border: 2px solid #003366;
+  font-weight: 600;
+}
+
 @media (max-width: 600px) {
   .menu-toggle {
     display: block;
@@ -278,5 +315,23 @@ footer {
   #kontak button {
     width: 100%;
     max-width: 320px;
+  }
+
+  .nilai-card {
+    margin: 15px 10px;
+    padding: 18px 15px;
+    border-radius: 12px;
+  }
+
+  .nilai-card h3 {
+    font-size: 18px;
+  }
+
+  .nilai-card p {
+    font-size: 14px;
+  }
+
+  .nilai-card strong {
+    width: 130px;
   }
 }
