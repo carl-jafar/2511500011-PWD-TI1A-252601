@@ -6,5 +6,5 @@ nim:2511500011
 belajar:
 <ol>
 <li>copy seluruh file dari elearning untuk latihan pertemuan-07</li>
-<li>menyalin pertemuan-05 dan mengisi dipertemuan-06 serta melengkapi tentang yang belum ada</li>
+<li>copy dan rename index.php menjadi get.php kemudian buat file baru get_proses.php untuk action</li>
 </ol>
