@@ -13,4 +13,5 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
   <li>membuat method post</li>
   <li>membuat style.css dan merapikan agar tampak seperti section #kontak</li>
   <li>membuat proses.php dengan method post</li>
+  <li>untuk js aku masih bingung salahnya dimana</li>
 </ol>

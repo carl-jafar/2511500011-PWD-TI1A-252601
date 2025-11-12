@@ -185,3 +185,21 @@ window.addEventListener("resize", () => {
         if (target) alignErrorMessage(small, target);
     });
 });
+
+document.getElementById("formPendaftaran").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const data = {
+    nim: document.getElementById("txtNim").value,
+    nama: document.getElementById("txtNama").value,
+    email: document.getElementById("txtEmail").value,
+    pesan: document.getElementById("txtPesan").value
+  };
+
+  document.getElementById("outNim").textContent = data.nim || "-";
+  document.getElementById("outNama").textContent = data.nama || "-";
+  document.getElementById("outEmail").textContent = data.email || "-";
+  document.getElementById("outPesan").textContent = data.pesan || "-";
+
+  document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+});
