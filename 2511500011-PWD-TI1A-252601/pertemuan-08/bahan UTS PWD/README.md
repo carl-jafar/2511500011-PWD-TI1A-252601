@@ -10,4 +10,7 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
   <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
   <li>membuat <form> pendaftaran</li>
+  <li>membuat method post</li>
+  <li>membuat style.css dan merapikan agar tampak seperti section #kontak</li>
+  <li>membuat proses.php dengan method post</li>
 </ol>

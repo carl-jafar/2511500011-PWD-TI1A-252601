@@ -53,6 +53,7 @@ endif;
     </section>
 
     <section id="tamu">
+      <h2>Profil Pengunjung Pendaftaran</h2>
       <form action="proses.php">
         <form action="get_proses.php" method="GET">
 
@@ -61,15 +62,15 @@ endif;
         </label>
 
         <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-          <input type="email" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="Nama Lengkap">
+          <input type="nama lengkap" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required autocomplete="Nama Lengkap">
         </label>
 
          <label for="txtlahir"><span>Tempat Lahir:</span>
-          <input type="email" id="txtlahir" name="txtlahir" placeholder="Masukkan tempat Lahir" required autocomplete="Tempat Lahir">
+          <input type="lahir" id="txtlahir" name="txtlahir" placeholder="Masukkan tempat Lahir" required autocomplete="Tempat Lahir">
         </label>
 
         <label for="txttgllahir"><span>Tanggal Lahir:</span>
-          <input type="email" id="txttgllahir" name="txttgllahir" placeholder="Masukkan tanggal Lahir" required autocomplete="tanggal Lahir">
+          <input type="lahir" id="txttgllahir" name="txttgllahir" placeholder="Masukkan tanggal Lahir" required autocomplete="tanggal Lahir">
         </label>     
 
         <label for="txthobi"><span>Hobi:</span>
@@ -77,28 +78,27 @@ endif;
         </label>
 
         <label for="txtpasangan"><span>pasangan:</span>
-          <input type="pasangan" id="txthobi" name="txthobi" placeholder="Masukkan hobi" required autocomplete="hobi">
+          <input type="pasangan" id="txtpasangan" name="txtpasangan" placeholder="Masukkan nama pasangan" required autocomplete="pasangan">
         </label>
 
         <label for="txtpekerjaan"><span>pekerjaan:</span>
           <input type="pekerjaan" id="txtpekerjaan" name="txtpekerjaan" placeholder="Masukkan pekerjaan" required autocomplete="pekerjaan">
         </label>
 
-        <label for="txthobi"><span>Hobi:</span>
-          <input type="hobi" id="txthobi" name="txthobi" placeholder="Masukkan hobi" required autocomplete="hobi">
-        </label>
-
         <label for="txtOrtu"><span>Nama Orang Tua:</span>
-          <input type="Ortu" id="txtOrtu" name="txtOrtu" placeholder="Masukkan Nama Ortu" required autocomplete="Ortu">
+          <input type="Ortu" id="txtOrtu" name="txtOrtu" placeholder="Masukkan Nama Orang Tua" required autocomplete="Ortu">
         </label>
 
         <label for="txtKakak"><span>Nama Kakak:</span>
-          <input type="Kakak" id="txtKakak" name="txtKakak" placeholder="Masukkan Nama Kakak" required autocomplete="Kakak">
+          <input type="Kakak" id="txtOrtu" name="txtKakak" placeholder="Masukkan Nama Kakak" required autocomplete="Kakak">
         </label>
 
          <label for="txtAdik"><span>Nama Adik:</span>
           <input type="Adik" id="txtAdik" name="txthobi" placeholder="Masukkan Nama Adik" required autocomplete="Adik">
         </label>
+
+                <button type="submit">Kirim</button>
+        <button type="reset">Batal</button>
 
     </section>
 

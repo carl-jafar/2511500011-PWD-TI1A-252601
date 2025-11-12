@@ -94,6 +94,17 @@ document.querySelector("form").addEventListener("submit", function (e) {
     const nama = document.getElementById("txtNama");
     const email = document.getElementById("txtEmail");
     const pesan = document.getElementById("txtPesan");
+    const NIM = document.getElementById("txtNim")
+    const namalengkap = document.getElementById("txtNmLengkap")
+    const tempatlahir = document.getElementById("txtlahir")
+    const tanggallahir = document.getElementById("txttgllahir")
+    const hobi = document.getElementById("txthobi")
+    const pasangan = document.getElementById("txtpasangan")
+    const pekerjaan = document.getElementById("txtpekerjaan")
+    const namaorangtua = document.getElementById("txtOrtu")
+    const namakakak = document.getElementById("txtOrtu")
+    const namaadik = document.getElementById("txtAdik")
+
     e.preventDefault();
     let isValid = true;
 
