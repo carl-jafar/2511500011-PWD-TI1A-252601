@@ -1,24 +1,20 @@
 <?php
 session_start();
-
-$_SESSION["txtNim"]       = $_POST["txtNim"] ?? '';
-$_SESSION["txtNmLengkap"] = $_POST["txtNmLengkap"] ?? '';
-$_SESSION["txtlahir"]     = $_POST["txtlahir"] ?? '';
-$_SESSION["txttgllahir"]  = $_POST["txttgllahir"] ?? '';
-$_SESSION["txthobi"]      = $_POST["txthobi"] ?? '';
-$_SESSION["txtpasangan"]  = $_POST["txtpasangan"] ?? '';
-$_SESSION["txtpekerjaan"] = $_POST["txtpekerjaan"] ?? '';
-$_SESSION["txtOrtu"]      = $_POST["txtOrtu"] ?? '';
-$_SESSION["txtKakak"]     = $_POST["txtKakak"] ?? '';
-$_SESSION["txtAdik"]      = $_POST["txtAdik"] ?? '';
-$_SESSION["sesnama"]  = $_POST["txtNama"] ?? '';
-$_SESSION["sesemail"] = $_POST["txtEmail"] ?? '';
-$_SESSION["sespesan"] = $_POST["txtPesan"] ?? '';
-
-foreach ($_POST as $key => $value) {
-  $_SESSION[$key] = $value;
-}
-
-header("Location: index.php");
-exit;
+$sesnama = $_POST["txtNama"];
+$sesemail = $_POST["txtEmail"];
+$sespesan = $_POST["txtPesan"];
+$_SESSION["sesnama"] = $sesnama;
+$_SESSION["sesemail"] = $sesemail;
+$_SESSION["sespesan"] = $sespesan;
+$$_SESSION["nim"]         = $_POST["txtNim"] ?? '';
+$_SESSION["namaLengkap"] = $_POST["txtNmLengkap"] ?? '';
+$_SESSION["lahir"]       = $_POST["txtlahir"] ?? '';
+$_SESSION["tglLahir"]    = $_POST["txttgllahir"] ?? '';
+$_SESSION["hobi"]        = $_POST["txthobi"] ?? '';
+$_SESSION["pasangan"]    = $_POST["txtpasangan"] ?? '';
+$_SESSION["pekerjaan"]   = $_POST["txtpekerjaan"] ?? '';
+$_SESSION["ortu"]        = $_POST["txtOrtu"] ?? '';
+$_SESSION["kakak"]       = $_POST["txtKakak"] ?? '';
+$_SESSION["adik"]        = $_POST["txtAdik"] ?? '';
+header("location: index.php");
 ?>

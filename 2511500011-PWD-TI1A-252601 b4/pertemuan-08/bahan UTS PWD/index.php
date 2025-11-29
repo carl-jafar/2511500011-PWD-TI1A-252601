@@ -55,7 +55,7 @@ endif;
     <section id="tamu">
       <h2>Profil Pengunjung Pendaftaran</h2>
       <form action="proses.php">
-        <form action="get_proses.php" method="GET">
+        <form action="get_proses.php" method="POST">
 
         <label for="txtNim"><span>NIM:</span>
           <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required autocomplete= "NIM">
@@ -99,10 +99,14 @@ endif;
 
                 <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
+</form>
+
+
 
     </section>
 
     <section id="about">
+      <form>
         <h2>Tentang Saya</h2>
         <p><strong>NIM :</strong> 2511500011</p>
         <p><strong>Nama Lengkap :</strong> Muhammad Haikal</p>
