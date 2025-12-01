@@ -16,4 +16,5 @@ nim:2511500011
   <li>echo session ke nilai label section contact selesai</li>
   <li>mengubah baris kode (10-19) menjadi bentuk array associative</li>
   <li>menambahkan htmlspecialchars, digunakan untuk input yang berasal dari pengguna.</li>
+  <li>menambahkan $_SESSION["biodata"] = $arrBiodata</li>
 </ol>
