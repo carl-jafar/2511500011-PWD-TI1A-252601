@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+  require_once __DIR__ . '/fungsi.php';
 ?>
 
 <!DOCTYPE html>
@@ -88,27 +89,24 @@ session_start();
 
     </section>
 
+    <?php $biodata = $_SESSION["biodata"] ?? "";
+    $fieldconfig = [
+      "nim" => ["label" => "nim:", "suffix" =>""],
+      "nama" => ["label" => "nama lengkap", "suffix" => "&#128526;"],
+      "tempat" => ["label" => "tempat lahir", "suffix" => ""],
+      "tanggal" => ["label" => "tanggal lahir", "suffix" => ""],
+      "hobi" => ["label" => "hobi", "suffix" => "&#127926;"],
+      "pasangan" => ["label" => "pasangan", "suffix" => "&hearts;"],
+      "pekerjaan" => ["label" => "pekerjaan", "suffix" => "&copy; 2025"],
+      "ortu" => ["label" => "nama orang tua", "suffix" => ""],
+      "kakak"=> ["label" => "nama kakak", "suffix" => ""],
+      "adik" => ["label" => "nama adik", "suffix" => ""],
+    ];
+    ?>
     <section id="about">
-      <?php foreach ($fieldcongif as $key => $metadata): ?>
-      <p>
-        <strong><?= $metadata["label"] ?></strong>
-        <?= htmlspecialchars(string: $biodata[$kunci] ?? "") ?>
-        <?= $metadata["suffix"] ?>
-      </p>
-      <?php endforeach; ?>
+    <?php= tampilkanbiodata(conf: $fieldconfig, arr: $biodata) ?>
       </section>
 
-      <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong> <?= $txtNim ?></p>
-      <p><strong>Nama Lengkap:</strong> <?= $txtNmLengkap ?> &#128526;</p>
-      <p><strong>Tempat Lahir:</strong> <?= $txtT4Lhr ?></p>
-      <p><strong>Tanggal Lahir:</strong> <?= $txtTglLhr ?></p>
-      <p><strong>Hobi:</strong> <?= $txtHobi ?> &#127926;</p>
-      <p><strong>Pasangan:</strong> <?= $txtPasangan ?> &hearts;</p>
-      <p><strong>Pekerjaan:</strong> <?= $txtKerja ?> &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> <?= $txtNmOrtu ?></p>
-      <p><strong>Nama Kakak:</strong> <?= $txtNmKakak ?></p>
-      <p><strong>Nama Adik:</strong> <?= $txtNmAdik ?></p>
     </section>
 
     <section id="contact">

@@ -17,4 +17,5 @@ nim:2511500011
   <li>mengubah baris kode (10-19) menjadi bentuk array associative</li>
   <li>menambahkan htmlspecialchars, digunakan untuk input yang berasal dari pengguna.</li>
   <li>menambahkan $_SESSION["biodata"] = $arrBiodata</li>
+  <li>menambahkan fungsi.php</li>
 </ol>
