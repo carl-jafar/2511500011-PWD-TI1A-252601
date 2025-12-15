@@ -31,6 +31,9 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($nama === '') {
             $errors[] = 'Nama wajib diisi.';
         }
+        elseif (strlen($nama) < 3) {
+            $errors[] = 'Nama minimal 3 karakter.';
+        }
 
         if ($email === '') {
             $errors[] = 'Email wajib diisi.';
@@ -40,6 +43,9 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($pesan === '') {
             $errors[] = 'Pesan wajib diisi.';
+        }
+        elseif (strlen($pesan) < 10) {
+            $errors[] = 'Pesan minimal 10 karakter.';
         }
         
         if (!empty($errors)) {
