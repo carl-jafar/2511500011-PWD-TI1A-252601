@@ -27,6 +27,11 @@ $fieldContact = [
     "cemail" => ["label" => "Email:", "suffix" => ""],
     "cpesan" => ["label" => "Pesan:", "suffix" => ""],
 ];
+if (empty($_SESSION['captcha_num1']) || empty($_SESSION['captcha_num2'])) {
+    $_SESSION['captcha_num1'] = rand(1, 9);
+    $_SESSION['captcha_num2'] = rand(1, 9);
+}
+$captcha_soal = $_SESSION['captcha_num1'] . " + " . $_SESSION['captcha_num2'];
 ?>
 
 <!DOCTYPE html>

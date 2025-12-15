@@ -13,4 +13,5 @@ nim:2511500011
   <li>tampil di read_inc.php yeay</li>
   <li>menambahkan no urut</li>
   <li>menambah else if untuk soal no 2 di proses.php</li>
+  <li>menambahkan captcha sederhana</li>
 </ol>

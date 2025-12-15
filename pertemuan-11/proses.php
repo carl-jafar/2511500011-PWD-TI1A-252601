@@ -47,6 +47,12 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         elseif (strlen($pesan) < 10) {
             $errors[] = 'Pesan minimal 10 karakter.';
         }
+
+        if ($jawaban_user === '') {
+            $errors[] = 'Jawaban Captcha wajib diisi.';
+        } elseif ($jawaban_user != $jawaban_benar) {
+            $errors[] = 'Jawaban Captcha salah.';
+        }
         
         if (!empty($errors)) {
             $_SESSION['old'] = [
