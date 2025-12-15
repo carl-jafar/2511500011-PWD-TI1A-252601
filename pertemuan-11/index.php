@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once __DIR__ . '/fungsi.php';
+require_once __DIR__ . '/koneksi.php';
+
 $biodata = $_SESSION["biodata"] ?? [];
 $fieldConfig = [
     "nim" => ["label" => "NIM:", "suffix" => ""],
@@ -14,11 +16,16 @@ $fieldConfig = [
     "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
     "adik" => ["label" => "Nama Adik:", "suffix" => ""],
 ];
-$contactList = $_SESSION["contact"] ?? [];
+
+$flash_sukses = $_SESSION['flash_sukses'] ?? '';
+$flash_error  = $_SESSION['flash_error'] ?? '';
+$old          = $_SESSION['old'] ?? [];
+unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']);
+
 $fieldContact = [
-    "nama" => ["label" => "Nama:", "suffix" => ""],
-    "email" => ["label" => "Email:", "suffix" => ""],
-    "pesan" => ["label" => "Pesan:", "suffix" => ""],
+    "cnama" => ["label" => "Nama:", "suffix" => ""],
+    "cemail" => ["label" => "Email:", "suffix" => ""],
+    "cpesan" => ["label" => "Pesan:", "suffix" => ""],
 ];
 ?>
 
@@ -113,43 +120,57 @@ $fieldContact = [
 
         <section id="contact">
             <h2>Kontak Kami</h2>
-            <form action="proses.php" method="POST">
 
+            <?php if ($flash_sukses): ?>
+            <p style="color: green; border: 1px solid green; padding: 10px; background-color: #e6ffe6;">
+                <?= $flash_sukses ?></p>
+            <?php endif; ?>
+
+            <?php if ($flash_error): ?>
+            <p style="color: red; border: 1px solid red; padding: 10px; background-color: #ffe6e6;"><?= $flash_error ?>
+            </p>
+            <?php endif; ?>
+
+            <form action="proses.php" method="POST">
                 <label for="txtNama"><span>Nama:</span>
                     <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required
-                        autocomplete="name">
+                        autocomplete="name" value="<?= bersihkan($old['cnama'] ?? '') ?>">
                 </label>
 
                 <label for="txtEmail"><span>Email:</span>
                     <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required
-                        autocomplete="email">
+                        autocomplete="email" value="<?= bersihkan($old['cemail'] ?? '') ?>">
                 </label>
 
                 <label for="txtPesan"><span>Pesan Anda:</span>
                     <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
-                        required></textarea>
+                        required><?= bersihkan($old['cpesan'] ?? '') ?></textarea>
                     <small id="charCount">0/200 karakter</small>
                 </label>
 
                 <button type="submit">Kirim</button>
                 <button type="reset">Batal</button>
             </form>
-            
+
             <br>
             <hr>
             <h2>Yang menghubungi kami</h2>
-            <?php 
-            
 
-            if (!empty($contactList)) {
-                                foreach ($contactList as $contact) {
+            <?php 
+            $query_tamu = "SELECT cnama, cemail, cpesan FROM tbl_tamu ORDER BY cid DESC";
+            $result = mysqli_query($conn, $query_tamu);
+            
+            if (mysqli_num_rows($result) > 0) {
+                while ($contact = mysqli_fetch_assoc($result)) {
                     echo tampilkanBiodata($fieldContact, $contact);
                     echo "<hr>";
-                }
+                } 
             } else {
-                echo "<p>Belum ada data kontak yang dikirim.</p>";
+                echo "<p>Belum ada data kontak dalam database.</p>";
             }
+            mysqli_close($conn); 
             ?>
+
         </section>
     </main>
 
