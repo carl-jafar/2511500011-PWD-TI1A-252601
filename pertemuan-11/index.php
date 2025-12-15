@@ -121,30 +121,33 @@ $fieldContact = [
         <section id="contact">
             <h2>Kontak Kami</h2>
 
-            <?php if ($flash_sukses): ?>
-            <p style="color: green; border: 1px solid green; padding: 10px; background-color: #e6ffe6;">
+            <?php if (!empty ($flash_sukses)): ?>
+            <div style="padding: 10px; margin-bottom: 10px; background:#d4edda; color:#155724; border-radius:6px;">
                 <?= $flash_sukses ?></p>
+            </div>
             <?php endif; ?>
 
-            <?php if ($flash_error): ?>
-            <p style="color: red; border: 1px solid red; padding: 10px; background-color: #ffe6e6;"><?= $flash_error ?>
-            </p>
+            <?php if (!empty ($flash_error)): ?>
+            <div style="padding: 10px; margin-bottom: 10px; background:#f8d7da; color:#721c24; border-radius:6px;">
+                <?= $flash_error ?>
+            </div>
             <?php endif; ?>
 
             <form action="proses.php" method="POST">
+              
                 <label for="txtNama"><span>Nama:</span>
                     <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required
-                        autocomplete="name" value="<?= bersihkan($old['cnama'] ?? '') ?>">
+                        autocomplete="name" value="<?= isset($old['nama'] : '' ) ?>">
                 </label>
 
                 <label for="txtEmail"><span>Email:</span>
                     <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required
-                        autocomplete="email" value="<?= bersihkan($old['cemail'] ?? '') ?>">
+                        autocomplete="email" value="<?= htmlspecialchars($old['email'] : '' ) ?>">
                 </label>
 
                 <label for="txtPesan"><span>Pesan Anda:</span>
                     <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..."
-                        required><?= bersihkan($old['cpesan'] ?? '') ?></textarea>
+                        required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
                     <small id="charCount">0/200 karakter</small>
                 </label>
 
