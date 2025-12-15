@@ -12,9 +12,13 @@ $q = mysqli_query($conn, $sql);
 if (!$q){
     echo"<p>gagal membaca data tamu: " . htmlspecialchars(mysqli_error($conn)) . "</p>";
 }
+
+$no = 1;
 ?>
+
 <table border="1" cellpadding="8" cellspacing="0">
     <tr>
+        <th>No</th> 
         <th>id</th>
         <th>nama</th>
         <th>email</th>
@@ -23,6 +27,7 @@ if (!$q){
 
     <?php while ($row = mysqli_fetch_assoc($q)): ?>
     <tr>
+        <td><?= $no++; ?> </td>
         <td><?= $row['cid'];?> </td>
         <td><?= htmlspecialchars($row['cnama']); ?></td>
         <td><?= htmlspecialchars($row['cemail']); ?></td>

@@ -11,4 +11,5 @@ nim:2511500011
   <li>tampilkan flash message</li>
   <li>rewrite proses.php</li>
   <li>tampil di read_inc.php yeay</li>
+  <li>menambahkan no urut</li>
 </ol>
