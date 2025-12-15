@@ -5,5 +5,6 @@ nim:2511500011
 
 <ol>
   <li>menambahkan "header("location: index.php#about");" diproses.php</li>
-  <li></li>
+  <li>mengecek apa yang salah</li>
+  <li>optimlisasi fungsi.php</li>
 </ol>
