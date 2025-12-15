@@ -1,6 +1,25 @@
 <?php
 session_start();
 require_once __DIR__ . '/fungsi.php';
+$biodata = $_SESSION["biodata"] ?? [];
+$fieldConfig = [
+    "nim" => ["label" => "NIM:", "suffix" => ""],
+    "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+    "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
+    "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
+    "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
+    "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+    "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+    "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
+    "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
+    "adik" => ["label" => "Nama Adik:", "suffix" => ""],
+];
+$contactList = $_SESSION["contact"] ?? [];
+$fieldContact = [
+    "nama" => ["label" => "Nama:", "suffix" => ""],
+    "email" => ["label" => "Email:", "suffix" => ""],
+    "pesan" => ["label" => "Pesan:", "suffix" => ""],
+];
 ?>
 
 <!DOCTYPE html>
@@ -32,23 +51,22 @@ require_once __DIR__ . '/fungsi.php';
         <section id="home">
             <h2>Selamat Datang</h2>
             <?php
-      echo "halo dunia!<br>";
-      echo "nama saya hadi";
-      ?>
+            echo "halo dunia!<br>";
+            echo "nama saya hadi";
+            ?>
             <p>Ini contoh paragraf HTML.</p>
         </section>
 
         <section id="biodata">
             <h2>Biodata Sederhana Mahasiswa</h2>
             <form action="proses.php" method="POST">
-
                 <label for="txtNim"><span>NIM:</span>
                     <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
                 </label>
 
                 <label for="txtNmLengkap"><span>Nama Lengkap:</span>
                     <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap"
-                        required>
+                        required autocomplete="name">
                 </label>
 
                 <label for="txtT4Lhr"><span>Tempat Lahir:</span>
@@ -56,7 +74,7 @@ require_once __DIR__ . '/fungsi.php';
                 </label>
 
                 <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-                    <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
+                    <input type="date" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
                 </label>
 
                 <label for="txtHobi"><span>Hobi:</span>
@@ -88,23 +106,6 @@ require_once __DIR__ . '/fungsi.php';
             </form>
         </section>
 
-        <?php
-    $biodata = $_SESSION["biodata"] ?? [];
-
-    $fieldConfig = [
-      "nim" => ["label" => "NIM:", "suffix" => ""],
-      "nama" => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
-      "tempat" => ["label" => "Tempat Lahir:", "suffix" => ""],
-      "tanggal" => ["label" => "Tanggal Lahir:", "suffix" => ""],
-      "hobi" => ["label" => "Hobi:", "suffix" => " &#127926;"],
-      "pasangan" => ["label" => "Pasangan:", "suffix" => " &hearts;"],
-      "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
-      "ortu" => ["label" => "Nama Orang Tua:", "suffix" => ""],
-      "kakak" => ["label" => "Nama Kakak:", "suffix" => ""],
-      "adik" => ["label" => "Nama Adik:", "suffix" => ""],
-    ];
-    ?>
-
         <section id="about">
             <h2>Tentang Saya</h2>
             <?= tampilkanBiodata($fieldConfig, $biodata) ?>
@@ -133,12 +134,21 @@ require_once __DIR__ . '/fungsi.php';
                 <button type="submit">Kirim</button>
                 <button type="reset">Batal</button>
             </form>
+            
+            <br>
+            <hr>
+            <h2>Yang menghubungi kami</h2>
             <?php 
-           <br> 
-<hr> 
-<h2>Yang menghubungi kami</h2> 
-<?php include 'read_inc.php'; ?>
-            <?= tampilkanBiodata($fieldContact, $contact)
+            
+
+            if (!empty($contactList)) {
+                                foreach ($contactList as $contact) {
+                    echo tampilkanBiodata($fieldContact, $contact);
+                    echo "<hr>";
+                }
+            } else {
+                echo "<p>Belum ada data kontak yang dikirim.</p>";
+            }
             ?>
         </section>
     </main>
