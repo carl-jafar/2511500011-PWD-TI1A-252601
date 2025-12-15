@@ -2,15 +2,15 @@
 require 'koneksi.php';
 
 $fieldContact = [
-    "nama" => ["label" => "Nama:", "suffix", => ""],
-    "email" => ["label" => "Email:", "suffix", => ""],
-    "pesan" => ["label" => "Tulis pesan anda:", "suffix", => ""]
+    "nama" => ["label" => "Nama:", "suffix" => ""],
+    "email" => ["label" => "Email:", "suffix" => ""],
+    "pesan" => ["label" => "Tulis pesan anda:", "suffix" => ""]
 ];
 
 $sql = "SELECT * from tbl_tamu order by cid desc";
-$q = mysqli_query($conn, $sql)
+$q = mysqli_query($conn, $sql);
 if (!$q){
-    echo"<p>gagal membaca data tamu: " . htmlspecialchars(mysqli_error($conn)) . "</p>"
+    echo"<p>gagal membaca data tamu: " . htmlspecialchars(mysqli_error($conn)) . "</p>";
 }
 ?>
 <table border="1" cellpadding="8" cellspacing="0">

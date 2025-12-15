@@ -10,4 +10,5 @@ nim:2511500011
   <li>menambah pesanb sukses dan gagal</li>
   <li>tampilkan flash message</li>
   <li>rewrite proses.php</li>
+  <li>tampil di read_inc.php yeay</li>
 </ol>
