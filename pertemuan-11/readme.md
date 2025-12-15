@@ -9,4 +9,5 @@ nim:2511500011
   <li>optimlisasi fungsi.php</li>
   <li>menambah pesanb sukses dan gagal</li>
   <li>tampilkan flash message</li>
+  <li>rewrite proses.php</li>
 </ol>
