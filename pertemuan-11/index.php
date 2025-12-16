@@ -37,9 +37,11 @@ $old          = $_SESSION['old'] ?? [];
 unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']);
 
 $fieldContact = [
+    "no" => ["label" => "No:", "suffix" => ""],
     "cnama" => ["label" => "Nama:", "suffix" => ""],
     "cemail" => ["label" => "Email:", "suffix" => ""],
     "cpesan" => ["label" => "Pesan:", "suffix" => ""],
+    "dcreated_at" => ["label" => "Created At:", "suffix" => ""],
 ];
 ?>
 
@@ -187,7 +189,7 @@ $fieldContact = [
                 <h2>Yang menghubungi kami</h2>
 
                 <?php 
-                $query_tamu = "SELECT cnama, cemail, cpesan FROM tbl_tamu ORDER BY cid DESC";
+                $query_tamu = "SELECT cnama, cemail, cpesan, dcreated_at FROM tbl_tamu ORDER BY cid DESC";
                 $result = mysqli_query($conn, $query_tamu);
                 
                 if (mysqli_num_rows($result) > 0) {

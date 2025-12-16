@@ -16,4 +16,5 @@ nim:2511500011
   <li>menambahkan captcha sederhana</li>
   <li>menambahkan proses.php captcha sederhana</li>
   <li>menambahkan dcreated_at ke tabel tbl_tamu</li>
+  <li>menambahkan kolom Created At setelah kolom Pesan untuk menampilkan tanggal dan waktu pesan dikirim</li>
 </ol>
