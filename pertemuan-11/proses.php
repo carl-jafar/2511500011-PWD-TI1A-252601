@@ -20,7 +20,29 @@ if (isset($_POST["txtNim"])) {
     redirect_ke('index.php#about');
 }
 
+elseif (isset($_POST["check_access"])) {
+    $jawaban_user = bersihkan($_POST['initialCaptcha'] ?? '');
+    
+    $num1_session = $_SESSION['captcha_num1'] ?? 0;
+    $num2_session = $_SESSION['captcha_num2'] ?? 0;
+    $jawaban_benar = $num1_session + $num2_session;
+
+    if ($jawaban_user == $jawaban_benar) {
+        $_SESSION['verified'] = true;
+        unset($_SESSION['captcha_num1'], $_SESSION['captcha_num2']); 
+    } else {
+        $_SESSION['verified'] = false;
+        $_SESSION['captcha_error'] = 'Jawaban verifikasi salah. Silakan coba lagi.';
+        unset($_SESSION['captcha_num1'], $_SESSION['captcha_num2']); 
+    }
+    redirect_ke('index.php'); 
+}
+
 elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!($_SESSION['verified'] ?? false)) {
+        redirect_ke('index.php'); 
+    }
+    
     if (isset($_POST["txtNama"])) {
         $nama  = bersihkan($_POST['txtNama'] ?? '');
         $email = bersihkan($_POST['txtEmail'] ?? '');
@@ -30,8 +52,7 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($nama === '') {
             $errors[] = 'Nama wajib diisi.';
-        }
-        elseif (strlen($nama) < 3) {
+        } elseif (strlen($nama) < 3) {
             $errors[] = 'Nama minimal 3 karakter.';
         }
 
@@ -43,15 +64,8 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($pesan === '') {
             $errors[] = 'Pesan wajib diisi.';
-        }
-        elseif (strlen($pesan) < 10) {
+        } elseif (strlen($pesan) < 10) {
             $errors[] = 'Pesan minimal 10 karakter.';
-        }
-
-        if ($jawaban_user === '') {
-            $errors[] = 'Jawaban Captcha wajib diisi.';
-        } elseif ($jawaban_user != $jawaban_benar) {
-            $errors[] = 'Jawaban Captcha salah.';
         }
         
         if (!empty($errors)) {
