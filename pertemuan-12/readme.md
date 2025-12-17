@@ -11,7 +11,7 @@ dengan NIM:2511500011
   <li>membuat file baru dengan nama edit.php di folder pertemuan-12 untuk menampilkan form dengan data lama yang 
       dibaca berdasarkan cid (prefill form).</li>
   <li>memperbaiki input captcha punya saya</li>
-  <li></li>
+  <li>membuat file baru yaitu proses_update.php dan menulis ulang darri punya bapak</li>
   <li></li>
   <li></li>
 </ol>
