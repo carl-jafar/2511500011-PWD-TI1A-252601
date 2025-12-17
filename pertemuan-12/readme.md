@@ -10,7 +10,7 @@ dengan NIM:2511500011
   <li>membuat  link edit yang aman, yaitu cid di-casting saat output (HTML)</li>
   <li>membuat file baru dengan nama edit.php di folder pertemuan-12 untuk menampilkan form dengan data lama yang 
       dibaca berdasarkan cid (prefill form).</li>
-  <li></li>
+  <li>memperbaiki input captcha punya saya</li>
   <li></li>
   <li></li>
   <li></li>
