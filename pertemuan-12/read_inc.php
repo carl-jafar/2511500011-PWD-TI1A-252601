@@ -7,7 +7,7 @@ $fieldContact = [
     "pesan" => ["label" => "Tulis pesan anda:", "suffix" => ""]
 ];
 
-$sql = "SELECT * from tbl_tamu order by cid desc";
+$sql = "SELECT cid, cnama, cemail, cpesan, dcreated_at FROM tbl_tamu ORDER BY cid DESC";
 $q = mysqli_query($conn, $sql);
 if (!$q){
     echo"<p>gagal membaca data tamu: " . htmlspecialchars(mysqli_error($conn)) . "</p>";
@@ -19,10 +19,11 @@ $no = 1;
 <table border="1" cellpadding="8" cellspacing="0">
     <tr>
         <th>No</th> 
-        <th>id</th>
-        <th>nama</th>
-        <th>email</th>
-        <th>pesan</th>
+        <th>Aksi</th> <th>ID</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Pesan</th>
+        <th>Created At</th>
     </tr>
 
     <?php while ($row = mysqli_fetch_assoc($q)): ?>

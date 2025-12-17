@@ -12,6 +12,6 @@ dengan NIM:2511500011
       dibaca berdasarkan cid (prefill form).</li>
   <li>memperbaiki input captcha punya saya</li>
   <li>membuat file baru yaitu proses_update.php dan menulis ulang darri punya bapak</li>
-  <li></li>
+  <li>done</li>
   <li></li>
 </ol>
