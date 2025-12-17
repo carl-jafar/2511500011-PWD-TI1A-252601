@@ -44,6 +44,7 @@ $i = 1;
 while($row = mysqli_fetch_assoc($q)): ?>
     <tr>
         <td><?= $i++?></td>
+        <td><a href="edit.php?cid=<?= (int)$row['cid']; ?>">edit</a></td>
         <td><?= $row['cid'];?> </td>
         <td><?= $row['cid'];?> </td>
         <td><?= htmlspecialchars($row['cnama']); ?></td>
