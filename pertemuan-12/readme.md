@@ -8,7 +8,8 @@ dengan NIM:2511500011
   <li>menambah tombol edit.php</li>
   <li>menambahkan kolom aksi seetlah no</li>
   <li>membuat  link edit yang aman, yaitu cid di-casting saat output (HTML)</li>
-  <li></li>
+  <li>membuat file baru dengan nama edit.php di folder pertemuan-12 untuk menampilkan form dengan data lama yang 
+      dibaca berdasarkan cid (prefill form).</li>
   <li></li>
   <li></li>
   <li></li>
