@@ -6,6 +6,6 @@ dengan NIM:2511500011
 <ol>
   <li>menyalin file dari pertemuan-11 ke pertemuan-12</li>
   <li>menambah tombol edit.php</li>
-  <li></li>
+  <li>menambahkan kolom aksi seetlah no</li>
   <li></li>
 </ol>
