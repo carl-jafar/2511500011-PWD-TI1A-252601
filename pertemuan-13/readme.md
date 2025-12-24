@@ -9,6 +9,6 @@ nim:2511500011
   <li>menyalin semua kode di proses_update.php ke proses_delete.php</li>
   <li>mengubah isi file proses_delete.php untuk prosees hapus</li>
   <li>menambahkan parameter cid untuk link deleta di read.php</li>
-  <li></li>
+  <li>memperbaiki file proses_delete.php agar menggunakan parameter cid</li>
   <li></li>
 </ol>
