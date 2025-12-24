@@ -7,8 +7,8 @@ nim:2511500011
   <li>import sql bahan praktikum pertemuan 13</li>
   <li>Menambahkan link delete untuk ke file proses_delete.php</li>
   <li>menyalin semua kode di proses_update.php ke proses_delete.php</li>
-  <li>mengubah isi file proses_delete.php</li>
-  <li></li>
+  <li>mengubah isi file proses_delete.php untuk prosees hapus</li>
+  <li>menambahkan parameter cid untuk link deleta di read.php</li>
   <li></li>
   <li></li>
 </ol>
