@@ -5,7 +5,7 @@ nim:2511500011
 
 <ol>
   <li>import sql bahan praktikum pertemuan 13</li>
-  <li></li>
+  <li>Menambahkan link delete untuk ke file proses_delete.php</li>
   <li></li>
   <li></li>
 </ol>
