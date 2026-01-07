@@ -8,7 +8,7 @@
   $q = mysqli_query($conn, $sql);
 
   // Query 2: Ambil data biodata mahasiswa
-  $sqlBio = "SELECT * FROM tbl_about_me ORDER BY id DESC";
+  $sqlBio = "SELECT * FROM tbl_biodata_mhs ORDER BY id DESC";
   $qBio = mysqli_query($conn, $sqlBio);
 
   // Validasi jika query gagal

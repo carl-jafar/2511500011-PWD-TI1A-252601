@@ -30,7 +30,7 @@ if (isset($_POST['txtNim'])) {
     $_SESSION["biodata"] = $arrBiodata;
 
     // 3. Simpan ke Database (tbl_about_me)
-    $sqlBio = "INSERT INTO tbl_about_me (nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik) 
+    $sqlBio = "INSERT INTO tbl_biodata_mhs (nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik) 
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmtBio = mysqli_prepare($conn, $sqlBio);
@@ -75,7 +75,7 @@ if (isset($_POST['txtNama'])) {
     }
 
     // Insert ke tbl_tamu
-    $sqlTamu = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
+    $sqlTamu = "INSERT INTO tbl_biodata_mhs (cnama, cemail, cpesan) VALUES (?, ?, ?)";
     $stmtTamu = mysqli_prepare($conn, $sqlTamu);
     
     if ($stmtTamu) {

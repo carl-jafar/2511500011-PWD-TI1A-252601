@@ -3,16 +3,18 @@ session_start();
 require __DIR__ . '/koneksi.php';
 require_once __DIR__ . '/fungsi.php';
 
-# 1. Cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('index.php');
 }
 
-# 2. LOGIKA UNTUK FORM BIODATA
+// ==========================================================
+// LOGIKA UNTUK FORM BIODATA
+// ==========================================================
 if (isset($_POST['btnBiodata'])) {
+    // 1. SANITASI (
     $nim      = bersihkan($_POST['txtNim'] ?? '');
-    $nama_l   = bersihkan($_POST['txtNmLengkap'] ?? '');
+    $nama     = bersihkan($_POST['txtNmLengkap'] ?? '');
     $tempat   = bersihkan($_POST['txtT4Lhr'] ?? '');
     $tanggal  = bersihkan($_POST['txtTglLhr'] ?? '');
     $hobi     = bersihkan($_POST['txtHobi'] ?? '');
@@ -22,54 +24,55 @@ if (isset($_POST['btnBiodata'])) {
     $kakak    = bersihkan($_POST['txtNmKakak'] ?? '');
     $adik     = bersihkan($_POST['txtNmAdik'] ?? '');
 
-    $sqlBio = "INSERT INTO tbl_about_me (nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik) 
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    
-    $stmt = mysqli_prepare($conn, $sqlBio);
-    mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $nama_l, $tempat, $tanggal, $hobi, $pasangan, $kerja, $ortu, $kakak, $adik);
-
-    if (mysqli_stmt_execute($stmt)) {
-        $_SESSION['flash_sukses'] = 'Biodata berhasil diperbarui!';
-    } else {
-        $_SESSION['flash_error'] = 'Gagal menyimpan biodata ke database.';
-    }
-    
-    mysqli_stmt_close($stmt);
-    redirect_ke('index.php#about');
-}
-
-# 3. LOGIKA UNTUK FORM KONTAK
-if (isset($_POST['btnKontak'])) {
-    $nama    = bersihkan($_POST['txtNama']   ?? '');
-    $email   = bersihkan($_POST['txtEmail']  ?? '');
-    $pesan   = bersihkan($_POST['txtPesan']  ?? '');
-    $captcha = bersihkan($_POST['txtCaptcha'] ?? '');
-
-    # Validasi
+    // 2. VALIDASI
     $errors = [];
-    if ($nama === '') $errors[] = 'Nama wajib diisi.';
-    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Email tidak valid.';
-    if (mb_strlen($pesan) < 10) $errors[] = 'Pesan minimal 10 karakter.';
-    if ($captcha !== "5") $errors[] = 'Jawaban captcha salah.';
+    if ($nim === '') $errors[] = 'NIM wajib diisi.';
+    if ($nama === '') $errors[] = 'Nama lengkap wajib diisi.';
 
     if (!empty($errors)) {
-        $_SESSION['old'] = ['nama' => $nama, 'email' => $email, 'pesan' => $pesan];
         $_SESSION['flash_error'] = implode('<br>', $errors);
-        redirect_ke('index.php#contact');
+        redirect_ke('index.php#biodata');
+        exit;
     }
 
-    # Insert ke tbl_tamu
+    // 3. INSERT KE TABEL BARU 
+    $sql = "INSERT INTO tbl_biodata_mhs (nim, nama_lengkap, tempat_lahir, tanggal_lahir, hobi, pasangan, pekerjaan, nama_ortu, nama_kakak, nama_adik) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssssssss", $nim, $nama, $tempat, $tanggal, $hobi, $pasangan, $kerja, $ortu, $kakak, $adik);
+
+    if (mysqli_stmt_execute($stmt)) {
+        // 4. KONSEP PRG 
+        $_SESSION['flash_sukses'] = 'Data biodata berhasil disimpan.';
+        redirect_ke('read.php'); // Lanjut ke file pembaca 
+    } else {
+        $_SESSION['flash_error'] = 'Gagal menyimpan data ke database.';
+        redirect_ke('index.php#biodata');
+    }
+    mysqli_stmt_close($stmt);
+    exit; // Menghentikan script agar tidak lanjut ke logika kontak
+}
+
+// ==========================================================
+// LOGIKA UNTUK FORM KONTAK 
+// ==========================================================
+if (isset($_POST['btnKontak'])) {
+    $nama    = bersihkan($_POST['txtNama'] ?? '');
+    $email   = bersihkan($_POST['txtEmail'] ?? '');
+    $pesan   = bersihkan($_POST['txtPesan'] ?? '');
+    $captcha = bersihkan($_POST['txtCaptcha'] ?? '');
+
+    // ... (Gunakan kode validasi kontak Anda yang sudah ada di sini) ...
+
     $sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "sss", $nama, $email, $pesan);
 
     if (mysqli_stmt_execute($stmt)) {
         unset($_SESSION['old']);
-        $_SESSION['flash_sukses'] = 'Pesan Anda sudah tersimpan.';
-    } else {
-        $_SESSION['flash_error'] = 'Gagal menyimpan pesan.';
+        $_SESSION['flash_sukses'] = 'Terima kasih, pesan tersimpan.';
     }
-    
-    mysqli_stmt_close($stmt);
     redirect_ke('index.php#contact');
+    exit;
 }

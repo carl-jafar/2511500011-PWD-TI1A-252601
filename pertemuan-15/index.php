@@ -82,7 +82,7 @@ require_once __DIR__ . '/fungsi.php';
           <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
         </label>
 
-        <button type="submit">Kirim</button>
+        <button type="submit" name="btnBiodata">Kirim</button>
         <button type="reset">Batal</button>
       </form>
     </section>
@@ -158,7 +158,7 @@ require_once __DIR__ . '/fungsi.php';
             value="<?= isset($old['captcha']) ? htmlspecialchars($old['captcha']) : '' ?>">
         </label>
 
-        <button type=" submit">Kirim</button>
+        <button type="submit" name="btnKontak">Kirim</button>
           <button type="reset">Batal</button>
       </form>
 
