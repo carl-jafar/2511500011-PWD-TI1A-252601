@@ -5,7 +5,7 @@ nim:2511500011
 
 <ol>
   <li>mengcopy paste file milik bapak</li>
-  <li></li>
+  <li>menambahkan table baru pada sql phpmyadmin</li>
   <li></li>
   <li></li>
 </ol>
