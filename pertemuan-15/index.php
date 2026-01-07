@@ -1,6 +1,27 @@
 <?php
 session_start();
 require_once __DIR__ . '/fungsi.php';
+require_once __DIR__ . '/koneksi.php';
+
+// Konfigurasi label untuk fungsi tampilkanBiodata
+$fieldConfig = [
+    "nim"       => ["label" => "NIM:", "suffix" => ""],
+    "nama"      => ["label" => "Nama Lengkap:", "suffix" => " &#128526;"],
+    "tempat"    => ["label" => "Tempat Lahir:", "suffix" => ""],
+    "tanggal"   => ["label" => "Tanggal Lahir:", "suffix" => ""],
+    "hobi"      => ["label" => "Hobi:", "suffix" => " &#127926;"],
+    "pasangan"  => ["label" => "Pasangan:", "suffix" => " &hearts;"],
+    "pekerjaan" => ["label" => "Pekerjaan:", "suffix" => " &copy; 2025"],
+    "ortu"      => ["label" => "Nama Orang Tua:", "suffix" => ""],
+    "kakak"     => ["label" => "Nama Kakak:", "suffix" => ""],
+    "adik"      => ["label" => "Nama Adik:", "suffix" => ""],
+];
+
+// Ambil pesan notifikasi jika ada
+$flash_sukses = $_SESSION['flash_sukses'] ?? '';
+$flash_error  = $_SESSION['flash_error'] ?? '';
+$old          = $_SESSION['old'] ?? [];
+unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']);
 ?>
 
 <!DOCTYPE html>
@@ -108,6 +129,30 @@ require_once __DIR__ . '/fungsi.php';
       <h2>Tentang Saya</h2>
       <?= tampilkanBiodata($fieldConfig, $biodata) ?>
     </section>
+
+    <?php 
+    require 'koneksi.php';
+    $resBio = mysqli_query($conn, "SELECT * FROM tbl_biodata_mhs ORDER BY id DESC LIMIT 1");
+    $dataDb = mysqli_fetch_assoc($resBio);
+
+    if ($dataDb) {
+        $arrTampil = [
+            "nim" => $dataDb['nim'],
+            "nama" => $dataDb['nama_lengkap'],
+            "tempat" => $dataDb['tempat_lahir'],
+            "tanggal" => $dataDb['tanggal_lahir'],
+            "hobi" => $dataDb['hobi'],
+            "pasangan" => $dataDb['pasangan'],
+            "pekerjaan" => $dataDb['pekerjaan'],
+            "ortu" => $dataDb['nama_ortu'],
+            "kakak" => $dataDb['nama_kakak'],
+            "adik" => $dataDb['nama_adik'],
+        ];
+        echo tampilkanBiodata($fieldConfig, $arrTampil);
+    } else {
+        echo "<p>Belum ada data.</p>";
+    }
+?>
 
     <?php
     $flash_sukses = $_SESSION['flash_sukses'] ?? ''; #jika query sukses

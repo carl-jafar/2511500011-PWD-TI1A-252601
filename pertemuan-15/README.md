@@ -11,6 +11,6 @@ nim:2511500011
   <li>menambahkan link pada header edit_biodata.php dan edit.php agar tersambung ke file read.php</li>
   <li>membuat file proses_delete_bio.php</li>
   <li>menyesuaikan kode proses_delete.php ke proses_delete_bio.php</li>
-  <li></li>
+  <li>menambahkan file proses_update.php</li>
 
 </ol>
