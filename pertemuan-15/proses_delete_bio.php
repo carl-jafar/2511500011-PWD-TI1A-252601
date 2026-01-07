@@ -1,0 +1,49 @@
+<?php
+  session_start();
+  require __DIR__ . '/koneksi.php';
+  require_once __DIR__ . '/fungsi.php';
+
+  /* 1. VALIDASI ID
+    Ambil nilai id dari GET. Pastikan id adalah angka dan > 0.
+    Di read.php Anda menggunakan href="proses_delete_bio.php?id=..."
+  */
+  $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, [
+    'options' => ['min_range' => 1]
+  ]);
+
+  if (!$id) {
+    $_SESSION['flash_error'] = 'ID Biodata tidak valid.';
+    redirect_ke('read.php');
+    exit;
+  }
+
+  /* 2. PREPARED STATEMENT
+    Gunakan DELETE untuk menghapus data berdasarkan ID.
+    Pastikan nama tabel sesuai (tbl_biodata_mhs).
+  */
+  $sql = "DELETE FROM tbl_biodata_mhs WHERE id = ?";
+  $stmt = mysqli_prepare($conn, $sql);
+
+  if (!$stmt) {
+    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem saat menyiapkan penghapusan.';
+    redirect_ke('read.php');
+    exit;
+  }
+
+  /* 3. BIND DAN EKSEKUSI
+    "i" berarti parameter yang di-bind adalah Integer.
+  */
+  mysqli_stmt_bind_param($stmt, "i", $id);
+
+  if (mysqli_stmt_execute($stmt)) {
+    // Jika baris berhasil dihapus
+    $_SESSION['flash_sukses'] = 'Biodata mahasiswa berhasil dihapus.';
+  } else {
+    // Jika gagal eksekusi (misal karena constraint database)
+    $_SESSION['flash_error'] = 'Gagal menghapus biodata. Silakan coba lagi.';
+  }
+
+  // 4. TUTUP DAN REDIRECT (Konsep PRG)
+  mysqli_stmt_close($stmt);
+  redirect_ke('read.php');
+  exit;
