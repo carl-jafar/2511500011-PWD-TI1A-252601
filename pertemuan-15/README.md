@@ -8,7 +8,7 @@ nim:2511500011
   <li>menambahkan kode di read.php agar bisa dibaca</li>
   <li>menambahkan fungsi update dan delete</li>
   <li>menambahkan file edit_biodata.php</li>
-  <li></li>
+  <li>menambahkan link pada header edit_biodata.php dan edit.php agar tersambung ke file read.php</li>
   <li></li>
   <li></li>
   <li></li>

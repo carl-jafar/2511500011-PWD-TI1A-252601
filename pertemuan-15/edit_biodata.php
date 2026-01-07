@@ -79,4 +79,29 @@
           </label>
 
           <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-            <input type
+            <input type="text" id="txtT4Lhr" name="txtT4LhrEd" 
+                   value="<?= htmlspecialchars($row['tempat_lahir']); ?>" required>
+          </label>
+
+          <label for="txtTglLhr"><span>Tanggal Lahir:</span>
+            <input type="text" id="txtTglLhr" name="txtTglLhrEd" 
+                   value="<?= htmlspecialchars($row['tanggal_lahir']); ?>" required>
+          </label>
+
+          <label for="txtHobi"><span>Hobi:</span>
+            <input type="text" id="txtHobi" name="txtHobiEd" 
+                   value="<?= htmlspecialchars($row['hobi']); ?>" required>
+          </label>
+
+          <label for="txtKerja"><span>Pekerjaan:</span>
+            <input type="text" id="txtKerja" name="txtKerjaEd" 
+                   value="<?= htmlspecialchars($row['pekerjaan']); ?>" required>
+          </label>
+
+          <button type="submit" name="btnUpdateBio">Kirim</button>
+          <a href="read.php" style="margin-left:10px;">Batal</a>
+        </form>
+      </section>
+    </main>
+</body>
+</html>

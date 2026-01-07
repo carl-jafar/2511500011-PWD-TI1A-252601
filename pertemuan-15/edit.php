@@ -82,15 +82,11 @@
   </head>
   <body>
     <header>
-      <h1>Ini Header</h1>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-        &#9776;
-      </button>
+      <h1>Edit Data Mahasiswa</h1>
       <nav>
         <ul>
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a href="index.php">Form Input</a></li>
+          <li><a href="read.php">Daftar Record</a></li>
         </ul>
       </nav>
     </header>
