@@ -10,4 +10,5 @@ hari ini 28 januari 2026 saya Muhammad Haikal dengan NIM:2511500011 melakukan UA
 <li>menambahkan proses delete bio</li>
 <li>menyesuaikan isi edit biodata.php</li>
 <li>habis waktu karna kelamaan di read.php</li>
+<li>nampil di php nya doang
 </ol>
