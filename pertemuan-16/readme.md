@@ -7,5 +7,6 @@ hari ini 28 januari 2026 saya Muhammad Haikal dengan NIM:2511500011 melakukan UA
 <li>ada error di sql</li>
 <li>membuat file edit biodata.php</li>
 <li>menyesuaikan isi edit biodata.php</li>
+<li>menambahkan proses delete bio</li>
 <li></li>
 </ol>
