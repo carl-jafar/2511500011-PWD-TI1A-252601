@@ -8,7 +8,7 @@
   $q = mysqli_query($conn, $sql);
 
   // Query 2: Ambil data biodata mahasiswa
-  $sqlBio = "SELECT * FROM tbl_biodata_dsn ORDER BY cid DESC";
+  $sqlBio = "SELECT * FROM tbl_biodata_dsn ORDER BY id DESC";
   $qBio = mysqli_query($conn, $sqlBio);
 
   // Validasi jika query gagal
@@ -66,7 +66,7 @@
 
 <hr>
 
-<h3>Daftar Biodata Mahasiswa</h3>
+<h3>Daftar Biodata Dosen</h3>
 <table border="1" cellpadding="8" cellspacing="0">
     <tr>
         <th>Kode Dosen</th>
@@ -86,7 +86,7 @@
         <td><?= $j++ ?></td>
         <td>
             <a href="edit_biodata.php?id=<?= (int)$rowBio['id']; ?>">Edit</a>
-            <a onclick="return confirm('Hapus biodata <?= htmlspecialchars($rowBio['nama_lengkap']); ?>?')" 
+            <a onclick="return confirm('Hapus biodata <?= htmlspecialchars($rowBio['Nama_Dosen']); ?>?')" 
                href="proses_delete_bio.php?id=<?= (int)$rowBio['id']; ?>">Delete</a>
         </td>
         <td><?= htmlspecialchars($rowBio['kode dosen']); ?></td>
