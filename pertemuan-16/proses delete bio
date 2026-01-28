@@ -21,7 +21,7 @@
     Gunakan DELETE untuk menghapus data berdasarkan ID.
     Pastikan nama tabel sesuai (tbl_biodata_mhs).
   */
-  $sql = "DELETE FROM tbl_biodata_ WHERE id = ?";
+  $sql = "DELETE FROM tbl_biodata_dsn WHERE id = ?";
   $stmt = mysqli_prepare($conn, $sql);
 
   if (!$stmt) {
