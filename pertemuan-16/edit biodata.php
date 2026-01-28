@@ -68,7 +68,7 @@
           
           <input type="hidden" name="id" value="<?= (int)$id; ?>">
 
-          <label for="txtNim"><span>kode dosen (Tidak dapat diubah):</span>
+          <label for="txtkddsn"><span>kode dosen (Tidak dapat diubah):</span>
  <label for="txtKodeDos"><span>Kode Dosen:</span>
           <input type="text" id="txtKodeDos" name="txtKodeDos" placeholder="Masukkan Kode Dosen" required>
         </label>
